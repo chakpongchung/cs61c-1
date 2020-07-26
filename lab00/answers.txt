@@ -1,4 +1,4 @@
-1.
-2.
-3.
-4.
+1.find commandd
+2.ps command
+3.kill command
+4.diff command
