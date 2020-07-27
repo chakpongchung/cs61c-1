@@ -1,3 +1,7 @@
+1.mv command
+2.chmod command
+3.pwd command
+4.ping command
 1.find commandd
 2.ps command
 3.kill command
