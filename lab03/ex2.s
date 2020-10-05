@@ -26,10 +26,10 @@ main:
     la s1, source
     la s2, dest
 loop:
-    slli s3, t0, 2
-    add t1, s1, s3
+    slli s3, t0, 2  # t0:k, s3:actual position of source
+    add t1, s1, s3 
     lw t2, 0(t1)
-    beq t2, x0, exit
+    beq t2, x0, exit # t2:source[k]
     add a0, x0, t2
     addi sp, sp, -8
     sw t0, 0(sp)
@@ -38,11 +38,11 @@ loop:
     lw t0, 0(sp)
     lw t2, 4(sp)
     addi sp, sp, 8
-    add t2, x0, a0
-    add t3, s2, s3
+    add t2, x0, a0 
+    add t3, s2, s3 # t3:dest[k]
     sw t2, 0(t3)
-    add s0, s0, t2
-    addi t0, t0, 1
+    add s0, s0, t2 # s0:sum
+    addi t0, t0, 1 # k++
     jal x0, loop
 square:
     add t0, a0, x0
