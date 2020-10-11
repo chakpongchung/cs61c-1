@@ -2,7 +2,7 @@
 .import ../../src/utils.s
 
 .data
-v0: .word 3 -42 432 7 -5 6 5 -114 2 # MAKE CHANGES HERE
+v0: .word 3 433 433 7 -5 6 50 1140 2 # MAKE CHANGES HERE
 
 .text
 main:

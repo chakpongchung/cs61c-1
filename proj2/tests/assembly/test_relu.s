@@ -13,8 +13,8 @@ main:
     la s0 m0
 
     # Set dimensions of m0
-    li s1 3 # MAKE CHANGES HERE
-    li s2 3 # MAKE CHANGES HERE
+    li s1 1 # MAKE CHANGES HERE
+    li s2 9 # MAKE CHANGES HERE
 
     # Print m0 before running relu
     mv a0 s0
