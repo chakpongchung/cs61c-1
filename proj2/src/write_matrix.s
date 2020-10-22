@@ -27,16 +27,65 @@
 write_matrix:
 
     # Prologue
+    addi sp, sp, -28
+    sw s0, 0(sp)
+    sw s1, 4(sp)
+    sw s2, 8(sp)
+    sw s3, 12(sp)
+    sw s4, 16(sp)
+    sw s5, 20(sp)
+    sw ra, 24(sp)
 
+    # save arguments
+    mv s0, a0
+    mv s1, a1
+    mv s2, a2
+    mv s3, a3
+    
+    # fopen
+    mv a1, s0
+    li a2, 1
+    jal fopen
+    blt a0, x0, exit_53
+    mv s4, a0
 
+    # calculate the number of items
+    mul s5, s2, s3
 
+    # fwrite
+    mv a1, s4
+    mv a2, s1
+    mv a3, s5
+    li a4, 4
+    jal fwrite
+    blt a0, s5, exit_54
 
-
-
-
+    # fclose
+    mv a1, s4
+    jal fclose
+    bne a0, x0, exit_55
 
 
     # Epilogue
-
+    lw s0, 0(sp)
+    lw s1, 4(sp)
+    lw s2, 8(sp)
+    lw s3, 12(sp)
+    lw s4, 16(sp)
+    lw s5, 20(sp)
+    lw ra, 24(sp)
+    addi sp, sp, 28
 
     ret
+
+exit_53:
+    li a1, 53
+    j exit2
+
+exit_54:
+    li a1, 54
+    j exit2
+
+exit_55:
+    li a1, 55
+    j exit2
