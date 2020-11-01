@@ -167,10 +167,10 @@
       <text fill="#404040" font-family="Dialog" font-size="12" text-anchor="end" x="1132" y="49">ASel</text>
       <text fill="#404040" font-family="Dialog" font-size="12" text-anchor="end" x="1182" y="49">BSel</text>
       <circ-port height="10" pin="670,210" width="10" x="1165" y="25"/>
-      <circ-port height="10" pin="620,210" width="10" x="1115" y="25"/>
-      <circ-port height="10" pin="570,210" width="10" x="925" y="25"/>
-      <circ-port height="10" pin="500,210" width="10" x="575" y="25"/>
       <circ-port height="10" pin="420,210" width="10" x="495" y="25"/>
+      <circ-port height="10" pin="620,210" width="10" x="1115" y="25"/>
+      <circ-port height="10" pin="500,210" width="10" x="575" y="25"/>
+      <circ-port height="10" pin="570,210" width="10" x="925" y="25"/>
       <circ-port height="10" pin="350,210" width="10" x="55" y="25"/>
       <circ-port height="8" pin="250,210" width="8" x="1006" y="26"/>
       <circ-port height="8" pin="200,210" width="8" x="966" y="26"/>
@@ -214,6 +214,9 @@
     <wire from="(70,100)" to="(280,100)"/>
     <wire from="(270,230)" to="(280,230)"/>
     <wire from="(220,230)" to="(230,230)"/>
+    <wire from="(290,460)" to="(360,460)"/>
+    <wire from="(290,420)" to="(360,420)"/>
+    <wire from="(290,500)" to="(360,500)"/>
     <wire from="(590,230)" to="(600,230)"/>
     <wire from="(640,230)" to="(650,230)"/>
     <comp lib="5" loc="(562,43)" name="Text">
@@ -349,6 +352,26 @@
     </comp>
     <comp lib="5" loc="(606,143)" name="Text">
       <a name="text" val="OUTPUT from your circuit"/>
+    </comp>
+    <comp lib="0" loc="(360,460)" name="Tunnel">
+      <a name="width" val="4"/>
+      <a name="label" val="ALUSel"/>
+    </comp>
+    <comp lib="0" loc="(360,420)" name="Tunnel">
+      <a name="label" val="RegWEn"/>
+    </comp>
+    <comp lib="0" loc="(290,460)" name="Constant">
+      <a name="width" val="4"/>
+      <a name="value" val="0x0"/>
+    </comp>
+    <comp lib="0" loc="(290,420)" name="Constant"/>
+    <comp lib="0" loc="(360,500)" name="Tunnel">
+      <a name="width" val="2"/>
+      <a name="label" val="WBSel"/>
+    </comp>
+    <comp lib="0" loc="(290,500)" name="Constant">
+      <a name="width" val="2"/>
+      <a name="value" val="0x0"/>
     </comp>
   </circuit>
 </project>
